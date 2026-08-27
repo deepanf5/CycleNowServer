@@ -9,7 +9,7 @@ router.get("/", (req: Request, res: Response) => {
   res.send({ message: "Cycle Server is Running" });
 });
 
-router.post("/api/register", registerController.user);
+router.post("/api/register", validUserScehama(), registerController.user);
 // router.post("/api/login");
 
 export default router;
