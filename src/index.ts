@@ -1,10 +1,12 @@
 import express from "express";
 import { connectToDB } from "./server";
 import { env } from "./config/env";
+import router from "./routes";
 
 const APP = express();
 const PORT = env.PORT;
 APP.use(express.json());
+APP.use(router);
 
 async function startServer() {
   await connectToDB();
@@ -14,5 +16,5 @@ async function startServer() {
 }
 
 startServer().catch((err) => {
-  console.error("Error starting the Server");
+  console.error("Error starting the Server", err);
 });
