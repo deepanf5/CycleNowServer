@@ -2,10 +2,10 @@ import type { IUser } from "../interfaces/app.interface";
 import { User } from "../models/auth/register.model";
 
 export const authRepository = {
-  async findUser(email: string): Promise<boolean> {
+  async findUser(email: string): Promise<any> {
     try {
       const user = await User.findOne({ email });
-      if (user) return true;
+      if (user) return user;
       return false;
     } catch (error) {
       throw error;

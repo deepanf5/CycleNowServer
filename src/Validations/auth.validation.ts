@@ -11,3 +11,11 @@ export const userSchemaZ = z.object({
     .min(8, "Password is mininum 8 character")
     .max(100, "password is too long"),
 });
+
+export const loginSchemaZ = z.object({
+  email: z.email(),
+  password: z
+    .string()
+    .min(8, "Password is mininum 8 character")
+    .max(100, "password is too long"),
+});

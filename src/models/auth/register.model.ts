@@ -20,7 +20,6 @@ const userSchema = new Schema<UserI>(
     password: {
       type: String,
       required: true,
-      select: false,
     },
     emailVerified: {
       type: Boolean,
